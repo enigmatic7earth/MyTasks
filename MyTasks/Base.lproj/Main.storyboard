@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MyTasks-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyTasks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D2f-kU-n2o"/>
+                        <viewControllerLayoutGuide type="bottom" id="HjE-Rh-dor"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="search tasks" translatesAutoresizingMaskIntoConstraints="NO" id="k6b-Gg-tyi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="barTintColor" red="1" green="0.82018268110000003" blue="0.3670986295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vvP-1D-92F"/>
+                                </connections>
+                            </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRh-8t-on2">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="add-task-icon" id="BNh-SH-sGb">
+                                        <connections>
+                                            <action selector="addTask:" destination="BYZ-38-t0r" id="RfM-V4-zzz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.98983973260000002" green="0.43641918899999999" blue="0.345651865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xQC-0J-CRv">
+                                <rect key="frame" x="0.0" y="76" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Cell" id="CGV-hA-3uD">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CGV-hA-3uD" id="C7S-B0-JdF">
+                                            <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="TaA-fd-1yr"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KDV-FA-MTd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="k6b-Gg-tyi" secondAttribute="trailing" id="510-Is-8iD"/>
+                            <constraint firstItem="k6b-Gg-tyi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8u5-z2-C9l"/>
+                            <constraint firstItem="PRh-8t-on2" firstAttribute="top" secondItem="xQC-0J-CRv" secondAttribute="bottom" id="GNy-oD-SLe"/>
+                            <constraint firstItem="HjE-Rh-dor" firstAttribute="top" secondItem="PRh-8t-on2" secondAttribute="bottom" id="OZ8-9O-5Ap"/>
+                            <constraint firstItem="PRh-8t-on2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RAf-u0-EKs"/>
+                            <constraint firstAttribute="trailing" secondItem="PRh-8t-on2" secondAttribute="trailing" id="Yk5-2n-HPp"/>
+                            <constraint firstItem="k6b-Gg-tyi" firstAttribute="top" secondItem="D2f-kU-n2o" secondAttribute="bottom" id="bX2-s9-jG4"/>
+                            <constraint firstItem="xQC-0J-CRv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gHk-wN-TR5"/>
+                            <constraint firstAttribute="trailing" secondItem="xQC-0J-CRv" secondAttribute="trailing" id="mSJ-Eq-fDV"/>
+                            <constraint firstItem="xQC-0J-CRv" firstAttribute="top" secondItem="k6b-Gg-tyi" secondAttribute="bottom" id="xIl-o7-jIT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MyTasks" id="Wop-cF-ELg"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="1DR-fj-o3k" id="BcW-FA-X9l"/>
+                        <outlet property="tableView" destination="xQC-0J-CRv" id="hls-UT-Zee"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="1DR-fj-o3k">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="r64-DC-a3k"/>
+                        <outlet property="searchBar" destination="k6b-Gg-tyi" id="Mkv-KQ-eS4"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="FRN-gz-RJp"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="xus-uA-bgy"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="Mt0-eF-Qb6"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="118.29085457271366"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="kl9-Ij-xwA">
+            <objects>
+                <viewController storyboardIdentifier="detailViewController" id="3dC-AU-FAS" customClass="DetailViewController" customModule="MyTasks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vcq-TK-tps"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ce-O2-Ayw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gaz-hf-c5M">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="KZE-42-yms">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaF-Fh-Fb2">
+                                <rect key="frame" x="64" y="12" width="236" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" name="app-red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fBI-m0-9vo">
+                                <rect key="frame" x="64" y="39" width="236" height="161"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3ce-O2-Ayw" firstAttribute="top" secondItem="KZE-42-yms" secondAttribute="bottom" id="M0p-48-Aog"/>
+                            <constraint firstItem="3ce-O2-Ayw" firstAttribute="top" secondItem="fBI-m0-9vo" secondAttribute="bottom" id="OI2-FE-LQK"/>
+                            <constraint firstAttribute="trailing" secondItem="fBI-m0-9vo" secondAttribute="trailing" id="QMj-1A-axX"/>
+                            <constraint firstItem="KZE-42-yms" firstAttribute="leading" secondItem="gaz-hf-c5M" secondAttribute="leading" id="S70-8p-wwE"/>
+                            <constraint firstItem="fBI-m0-9vo" firstAttribute="top" secondItem="OaF-Fh-Fb2" secondAttribute="bottom" constant="7.5" id="hEz-ba-UGD"/>
+                            <constraint firstItem="fBI-m0-9vo" firstAttribute="leading" secondItem="OaF-Fh-Fb2" secondAttribute="leading" id="ha9-Dj-ZzH"/>
+                            <constraint firstItem="KZE-42-yms" firstAttribute="top" secondItem="Vcq-TK-tps" secondAttribute="bottom" id="k8Z-P3-LyL"/>
+                            <constraint firstItem="OaF-Fh-Fb2" firstAttribute="top" secondItem="Vcq-TK-tps" secondAttribute="bottom" constant="12" id="kN0-us-krv"/>
+                            <constraint firstItem="OaF-Fh-Fb2" firstAttribute="leading" secondItem="gaz-hf-c5M" secondAttribute="leading" constant="64" id="o1F-0f-CU4"/>
+                            <constraint firstAttribute="trailing" secondItem="KZE-42-yms" secondAttribute="trailing" id="pCk-Ha-Edv"/>
+                            <constraint firstAttribute="trailing" secondItem="OaF-Fh-Fb2" secondAttribute="trailing" id="xm8-n6-C1Q"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="200"/>
+                    <connections>
+                        <outlet property="detailText" destination="fBI-m0-9vo" id="nN5-P0-CLG"/>
+                        <outlet property="headerLabel" destination="OaF-Fh-Fb2" id="jOE-fA-aSb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7TK-Eh-AAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812.8" y="-92.653673163418304"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add-task-icon" width="24" height="24"/>
+        <image name="note" width="612" height="408"/>
+        <namedColor name="app-red">
+            <color red="0.99000000953674316" green="0.43599998950958252" blue="0.34599998593330383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
